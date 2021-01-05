@@ -21,6 +21,16 @@ public:
 		cout << "call operator() \n";
 		return i1;
 	}
+	operator int() 
+	{
+		cout << "call auto convert int\n";
+		return i1;
+	}
+	operator string()
+	{
+		cout << "call auto convert string\n";
+		return "hello";
+	}
 };
 
 int operator+( const item& it1, int i )
@@ -42,5 +52,7 @@ int main()
 	cout << obj1 + 100 << endl;
 	cout << obj1() << endl;
 	cout << (*Get())() << endl;
+	cout << item(10) - 2 << endl;
+	cout << ((string)item(10))[1] << endl;
 	return 0;
 }
